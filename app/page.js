@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <h1>Get Started AIGPT</h1>
+      <h1>Ask GPT</h1>
       <div>
         <textarea
         value={message}
