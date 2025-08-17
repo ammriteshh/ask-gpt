@@ -74,7 +74,7 @@ export default function Home() {
         <div className={styles.headerContent}>
           <div className={styles.logo}>
             <div className={styles.logoIcon}>🤖</div>
-            <h1>AI Assistant</h1>
+            <h1>Ask GPT</h1>
           </div>
           <button onClick={clearChat} className={styles.clearButton}>
             Clear Chat
@@ -87,7 +87,7 @@ export default function Home() {
           {messages.length === 0 && (
             <div className={styles.welcomeMessage}>
               <div className={styles.welcomeIcon}>👋</div>
-              <h2>Welcome to AI Assistant</h2>
+              <h2>Welcome to Ask GPT</h2>
               <p>Ask me anything! I'm here to help you with questions, coding, writing, analysis, and more.</p>
             </div>
           )}
@@ -134,7 +134,7 @@ export default function Home() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Type your message here... (Press Enter to send, Shift+Enter for new line)"
+              placeholder="Type your message here..."
               rows={1}
               className={styles.textarea}
               disabled={loading}
@@ -153,9 +153,6 @@ export default function Home() {
                 </svg>
               )}
             </button>
-          </div>
-          <div className={styles.inputHint}>
-            Press Enter to send • Shift+Enter for new line
           </div>
         </div>
       </div>
