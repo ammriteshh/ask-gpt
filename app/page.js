@@ -18,7 +18,7 @@ export default function Home() {
 
   const handleChat = async () => {
     if (!message.trim()) return;
-    
+
     const userMessage = { role: "user", content: message, timestamp: new Date() };
     setMessages(prev => [...prev, userMessage]);
     setLoading(true);
@@ -38,18 +38,18 @@ export default function Home() {
       }
 
       const data = await res.json();
-      const aiMessage = { 
-        role: "assistant", 
-        content: data.response, 
-        timestamp: new Date() 
+      const aiMessage = {
+        role: "assistant",
+        content: data.response,
+        timestamp: new Date()
       };
       setMessages(prev => [...prev, aiMessage]);
-      
+
     } catch (error) {
-      const errorMessage = { 
-        role: "error", 
-        content: "Sorry, I encountered an error. Please try again.", 
-        timestamp: new Date() 
+      const errorMessage = {
+        role: "error",
+        content: "Sorry, I encountered an error. Please try again.",
+        timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
     }
@@ -73,12 +73,31 @@ export default function Home() {
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.logo}>
-            <div className={styles.logoIcon}>🤖</div>
+            <div className={styles.logoIcon}>
+              <img
+                src="/ai-avatar.svg"
+                alt="AI Assistant"
+                className={styles.logoImage}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div className={styles.logoFallback}>🤖</div>
+            </div>
             <h1>Ask GPT</h1>
           </div>
-          <button onClick={clearChat} className={styles.clearButton}>
-            Clear Chat
-          </button>
+          <div className={styles.headerActions}>
+            <button onClick={clearChat} className={styles.clearButton}>
+              Clear Chat
+            </button>
+            <button className={styles.closeButton}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -86,14 +105,39 @@ export default function Home() {
         <div className={styles.messagesContainer}>
           {messages.length === 0 && (
             <div className={styles.welcomeMessage}>
-              <div className={styles.welcomeIcon}>👋</div>
+              <div className={styles.welcomeIllustration}>
+                <img
+                  src="/welcome-illustration.svg"
+                  alt="Welcome to AI Chat"
+                  className={styles.welcomeImage}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className={styles.welcomeIcon}>👋</div>
+              </div>
               <h2>Welcome to Ask GPT</h2>
               <p>Ask me anything! I'm here to help you with questions, coding, writing, analysis, and more.</p>
             </div>
           )}
-          
+
           {messages.map((msg, index) => (
             <div key={index} className={`${styles.message} ${styles[msg.role]}`}>
+              {msg.role === "assistant" && (
+                <div className={styles.avatar}>
+                  <img
+                    src="/ai-avatar.svg"
+                    alt="AI Assistant"
+                    className={styles.avatarImage}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className={styles.avatarFallback}>🤖</div>
+                </div>
+              )}
               <div className={styles.messageContent}>
                 <div className={styles.messageHeader}>
                   <span className={styles.messageRole}>
@@ -109,9 +153,21 @@ export default function Home() {
               </div>
             </div>
           ))}
-          
+
           {loading && (
             <div className={`${styles.message} ${styles.assistant}`}>
+              <div className={styles.avatar}>
+                <img
+                  src="/ai-avatar.svg"
+                  alt="AI Assistant"
+                  className={styles.avatarImage}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className={styles.avatarFallback}>🤖</div>
+              </div>
               <div className={styles.messageContent}>
                 <div className={styles.messageHeader}>
                   <span className={styles.messageRole}>AI Assistant</span>
@@ -124,7 +180,7 @@ export default function Home() {
               </div>
             </div>
           )}
-          
+
           <div ref={messagesEndRef} />
         </div>
 
@@ -139,7 +195,7 @@ export default function Home() {
               className={styles.textarea}
               disabled={loading}
             />
-            <button 
+            <button
               onClick={handleChat}
               disabled={loading || !message.trim()}
               className={styles.sendButton}

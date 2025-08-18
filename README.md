@@ -6,20 +6,20 @@ A beautiful, full-featured AI chat application built with Next.js and OpenAI. Ex
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-green?style=for-the-badge&logo=openai)
 ![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)
 
-## ✨ Features
+## Features
 
-- 🤖 **Intelligent AI Conversations** - Powered by OpenAI's GPT-4o-mini
-- 💬 **Real-time Chat Interface** - Smooth, responsive messaging experience
-- 🎨 **Modern Design** - Beautiful gradient UI with glassmorphism effects
-- 📱 **Fully Responsive** - Works perfectly on desktop, tablet, and mobile
-- ⚡ **Fast & Lightweight** - Built with Next.js 15 and optimized for performance
-- 🔄 **Message History** - View your conversation history during the session
-- ⌨️ **Keyboard Shortcuts** - Press Enter to send, Shift+Enter for new line
-- 🎯 **Smart Loading States** - Beautiful animations and loading indicators
-- 🚫 **Error Handling** - Graceful error handling with user-friendly messages
-- 🧹 **Clear Chat** - One-click conversation reset
+- **Intelligent AI Conversations** - Powered by OpenAI's GPT-4o-mini
+- **Real-time Chat Interface** - Smooth, responsive messaging experience
+- **Modern Design** - Beautiful gradient UI with glassmorphism effects
+- **Fully Responsive** - Works perfectly on desktop, tablet, and mobile
+- **Fast & Lightweight** - Built with Next.js 15 and optimized for performance
+- **Message History** - View your conversation history during the session
+- **Keyboard Shortcuts** - Press Enter to send, Shift+Enter for new line
+- **Smart Loading States** - Beautiful animations and loading indicators
+- **Error Handling** - Graceful error handling with user-friendly messages
+- **Clear Chat** - One-click conversation reset
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -69,7 +69,7 @@ A beautiful, full-featured AI chat application built with Next.js and OpenAI. Ex
 - **Styling**: Modern CSS with gradients and animations
 - **Deployment**: Vercel-ready
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 aiapp/
@@ -86,7 +86,7 @@ aiapp/
 └── package.json                  # Dependencies
 ```
 
-## 🎨 Design Features
+## Design Features
 
 - **Gradient Background** - Beautiful purple-blue gradient
 - **Glassmorphism Effects** - Frosted glass UI elements
@@ -96,7 +96,7 @@ aiapp/
 - **Loading States** - Animated dots and spinners
 - **Message Bubbles** - Chat-style message display
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -112,7 +112,7 @@ The app uses OpenAI's GPT-4o-mini model with the following settings:
 - **Temperature**: 0.7
 - **System Prompt**: Helpful AI assistant with clear, accurate responses
 
-## 📱 Usage
+## Usage
 
 1. **Start a Conversation**: Type your message in the input field
 2. **Send Messages**: Press Enter or click the send button
@@ -120,7 +120,7 @@ The app uses OpenAI's GPT-4o-mini model with the following settings:
 4. **Clear Chat**: Click the "Clear Chat" button to start fresh
 5. **View History**: Scroll through your conversation history
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to Vercel (Recommended)
 
@@ -138,14 +138,14 @@ The app is compatible with any platform that supports Next.js:
 - DigitalOcean App Platform
 - AWS Amplify
 
-## 🔒 Security
+## Security
 
 - API keys are stored securely in environment variables
 - Input validation on both client and server
 - Rate limiting through OpenAI's API
 - No sensitive data stored locally
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -153,17 +153,17 @@ The app is compatible with any platform that supports Next.js:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [OpenAI](https://openai.com/) for providing the AI capabilities
 - [Next.js](https://nextjs.org/) for the amazing framework
 - [Vercel](https://vercel.com/) for deployment platform
 
-## 📞 Support
+## Support
 
 If you encounter any issues or have questions:
 

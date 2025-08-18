@@ -12,11 +12,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AI Assistant - Your Smart Chat Companion",
+  title: "Ask GPT",
   description: "A modern AI chat application powered by OpenAI. Ask questions, get help with coding, writing, analysis, and more.",
   keywords: "AI, chatbot, OpenAI, assistant, chat, GPT",
   authors: [{ name: "AI Assistant Team" }],
   viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/ai-avatar.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: "Ask GPT - AI Assistant",
+    description: "A modern AI chat application powered by OpenAI",
+    images: ['/og-image.png'],
+  },
 };
 
 export default function RootLayout({ children }) {
