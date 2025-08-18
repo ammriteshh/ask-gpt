@@ -1,4 +1,4 @@
-# AI Assistant - Modern Chat Application
+# Ask GPT - Modern Chat Application
 
 A beautiful, full-featured AI chat application built with Next.js and OpenAI. Experience smooth conversations with an intelligent AI assistant that can help with coding, writing, analysis, and more.
 
