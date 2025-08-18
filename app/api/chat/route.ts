@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-const client = new OpenAI({
+const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
         const { message } = body;
 
         // Validate input
-        if (!message || typeof message !== 'string' || message.trim().length === 0) {
+        if (!message || typeof message !== "string" || message.trim().length === 0) {
             return Response.json(
                 { error: "Message is required and must be a non-empty string" },
                 { status: 400 }
@@ -31,16 +31,17 @@ export async function POST(request: Request) {
             model: "gpt-4o-mini",
             messages: [
                 {
-                    role: 'system',
-                    content: 'You are a helpful AI assistant. Provide clear, accurate, and helpful responses. If you\'re not sure about something, say so. Keep responses concise but informative.'
+                    role: "system",
+                    content:
+                        "You are a helpful AI assistant. Provide clear, accurate, and helpful responses. If you're not sure about something, say so. Keep responses concise but informative."
                 },
                 {
-                    role: 'user',
+                    role: "user",
                     content: message.trim()
                 }
             ],
             max_tokens: 1000,
-            temperature: 0.7,
+            temperature: 0.7
         });
 
         const response = completion.choices[0]?.message?.content;
@@ -53,15 +54,13 @@ export async function POST(request: Request) {
         }
 
         return Response.json({
-            response: response,
+            response,
             model: completion.model,
             usage: completion.usage
         });
-
     } catch (error: any) {
-        console.error('Chat API Error:', error);
+        console.error("Chat API Error:", error);
 
-        // Handle specific OpenAI errors
         if (error?.status === 401) {
             return Response.json(
                 { error: "Invalid API key. Please check your OpenAI API key configuration." },
@@ -83,10 +82,9 @@ export async function POST(request: Request) {
             );
         }
 
-        // Generic error response
         return Response.json(
             { error: "An unexpected error occurred. Please try again." },
             { status: 500 }
         );
     }
-} 
+}
