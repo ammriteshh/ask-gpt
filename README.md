@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Ask GPT
+=======
+# Ask GPT - Modern Chat Application
+>>>>>>> e8f387801a25d707dbc5118080ff046a74835882
 
 A beautiful, full-featured AI chat application built with Next.js and OpenAI. Experience smooth conversations with an intelligent AI assistant that can help with coding, writing, analysis, and more.
 
